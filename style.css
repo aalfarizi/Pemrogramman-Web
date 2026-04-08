@@ -403,9 +403,9 @@ footer {
   .time-slots { grid-template-columns: repeat(2, 1fr); }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* ==================================================
+   TAMBAHAN CSS UNTUK DETAIL LAPANGAN & SLIDER
+================================================== */
 .detail-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -442,18 +442,18 @@ html {
 }
 
 .detail-list strong {
-  color: var(--lime, #a3ff12); /* Menggunakan warna lime bawaanmu */
+  color: var(--lime); 
 }
 
 .btn-lanjut-booking {
-  background: var(--lime, #a3ff12);
-  color: black;
+  background: var(--lime);
+  color: var(--dark);
   padding: 12px 24px;
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -462,15 +462,24 @@ html {
   filter: brightness(0.9);
 }
 
-/* --- Styling Khusus Slider --- */
+/* --- Styling Slider (RESPONSIVE: PAS DI HP & LAPTOP) --- */
+
+/* 1. Ukuran Dasar (Ini yang akan dipakai di layar HP) */
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 300px; /* Tinggi pas untuk HP */
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1.5rem;
   background: #2a2a2a;
+}
+
+/* 2. Deteksi Layar Lebar (Tablet & Laptop) */
+@media (min-width: 768px) {
+  .slider-wrapper {
+    height: 500px; /* Tinggi otomatis melar jadi 500px di layar besar */
+  }
 }
 
 .slider-track {
@@ -480,10 +489,12 @@ html {
   transition: transform 0.4s ease-in-out;
 }
 
+/* 3. Pengaturan Gambar Biar Pas & Gak Gepeng */
 .slider-track img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; 
+  object-position: center bottom; /* Paksa website memotong bagian atas/langit-langit saja */
   flex-shrink: 0;
 }
 
@@ -507,8 +518,8 @@ html {
 }
 
 .slider-btn:hover {
-  background: var(--lime, #a3ff12);
-  color: #000;
+  background: var(--lime);
+  color: var(--dark);
 }
 
 .slider-btn.prev {
@@ -517,10 +528,4 @@ html {
 
 .slider-btn.next {
   right: 15px;
-}
-
-.slider-track img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
