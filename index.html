@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lapangan.ID</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo">LAPANGAN<span>.ID</span></span>
+  <ul class="nav-links">
+    <li><a href="#sports">Olahraga</a></li>
+    <li><a href="#booking">Booking</a></li>
+    <li><a href="#fasilitas">Fasilitas</a></li>
+    <li><a href="#ulasan">Ulasan</a></li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Booking Sekarang</button>
+  <button class="hamburger" id="menuBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenu">✕</button>
+  <a href="#sports"   onclick="closeMobile()">Lapangan</a>
+  <a href="#booking"  onclick="closeMobile()">Booking</a>
+  <a href="#fasilitas" onclick="closeMobile()">Fasilitas</a>
+  <a href="#ulasan"   onclick="closeMobile()">Ulasan</a>
+  <a href="#booking"  onclick="closeMobile()" style="color:var(--lime)">Pesan Sekarang →</a>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">⚡ Booking Instan — Konfirmasi Langsung</div>
+    <h1 class="hero-title">MAIN<br>KAPAN<br><span>AJA.</span></h1>
+    <p class="hero-sub">Platform booking lapangan mini soccer, padel, dan badminton terlengkap. Pilih jadwal, bayar, dan langsung main — semua dalam hitungan menit.</p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">Booking Lapangan</a>
+      <a href="#sports"  class="btn-ghost">Lihat Jadwal</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Lapangan tersedia</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">06:00</div>
+      <div class="stat-label">Buka setiap hari</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2.4K+</div>
+      <div class="stat-label">Sesi dimainkan</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4.9★</div>
+      <div class="stat-label">Rating pengguna</div>
+    </div>
+  </div>
+</div>
+
+<!-- SPORTS -->
+<section id="sports">
+  <div class="section-label">Pilih Olahraga</div>
+  <h2 class="section-title reveal">3 LAPANGAN,<br>1 TEMPAT.</h2>
+  <p class="section-sub reveal">Semua tersedia dengan fasilitas premium dan jadwal fleksibel.</p>
+
+  <div class="sports-grid">
+    <div class="sport-card reveal" onclick="selectSport('minisoccer')">
+      <div class="sport-badge">4 Lapangan</div>
+      <div class="sport-card-img soccer">
+        <div class="sport-icon">⚽</div>
+      </div>
+      <div class="sport-card-body">
+        <div class="sport-name">Mini Soccer</div>
+        <div class="sport-courts">Lapangan sintetis FIFA-approved • Indoor & Outdoor</div>
+        <div class="sport-price">
+          <span class="price-num">Rp 300K</span>
+          <span class="price-unit">/ jam</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sport-card reveal" onclick="selectSport('padel')">
+      <div class="sport-badge">4 Lapangan</div>
+      <div class="sport-card-img padel">
+        <div class="sport-icon">🎾</div>
+      </div>
+      <div class="sport-card-body">
+        <div class="sport-name">Padel</div>
+        <div class="sport-courts">Kaca tempered premium • Pencahayaan LED</div>
+        <div class="sport-price">
+          <span class="price-num">Rp 200K</span>
+          <span class="price-unit">/ jam</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sport-card reveal" onclick="selectSport('badminton')">
+      <div class="sport-badge">4 Lapangan</div>
+      <div class="sport-card-img badminton">
+        <div class="sport-icon">🏸</div>
+      </div>
+      <div class="sport-card-body">
+        <div class="sport-name">Badminton</div>
+        <div class="sport-courts">Lantai kayu parket • Standar BWF</div>
+        <div class="sport-price">
+          <span class="price-num">Rp 100K</span>
+          <span class="price-unit">/ jam</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<div class="booking-section" id="booking">
+  <div class="booking-wrap">
+    <div>
+      <div class="section-label">Pemesanan</div>
+      <h2 class="section-title reveal">BOOKING<br>LAPANGAN.</h2>
+      <p class="section-sub reveal" style="margin-bottom:2.5rem;">Isi form di bawah dan konfirmasi booking langsung dikirim ke WhatsApp kamu.</p>
+
+      <div class="booking-form-card reveal">
+        <div class="form-title">Detail Pemesanan</div>
+        <div class="form-sub">Semua kolom wajib diisi</div>
+
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" id="f-name" placeholder="Masukkan nama kamu" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>No. WhatsApp</label>
+            <input type="tel" id="f-phone" placeholder="08xxxxxxxxxx" />
+          </div>
+          <div class="form-group">
+            <label>Jenis Olahraga</label>
+            <select id="f-sport" onchange="updateSummary()">
+              <option value="">Pilih olahraga</option>
+              <option value="minisoccer">⚽ Mini Soccer — Rp 300K/jam</option>
+              <option value="padel">🎾 Padel — Rp 200K/jam</option>
+              <option value="badminton">🏸 Badminton — Rp 100K/jam</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tanggal Main</label>
+            <input type="date" id="f-date" onchange="updateSummary()" />
+          </div>
+          <div class="form-group">
+            <label>Nomor Lapangan</label>
+            <select id="f-court" onchange="updateSummary()">
+              <option value="">Pilih lapangan</option>
+              <option value="1">Lapangan 1</option>
+              <option value="2">Lapangan 2</option>
+              <option value="3">Lapangan 3</option>
+              <option value="4">Lapangan 4</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Pilih Jam Mulai</label>
+          <div class="time-slots" id="time-slots"></div>
+        </div>
+
+        <div class="form-group">
+          <label>Durasi Sewa</label>
+          <select id="f-duration" onchange="updateSummary()">
+            <option value="1">1 Jam</option>
+            <option value="2">2 Jam</option>
+            <option value="3">3 Jam</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-summary reveal">
+      <div class="summary-title">Ringkasan Booking</div>
+
+      <div class="summary-item">
+        <span class="summary-label">Olahraga</span>
+        <span class="summary-val" id="s-sport">—</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Tanggal</span>
+        <span class="summary-val" id="s-date">—</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Lapangan</span>
+        <span class="summary-val" id="s-court">—</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Jam</span>
+        <span class="summary-val" id="s-time">—</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Durasi</span>
+        <span class="summary-val" id="s-dur">1 Jam</span>
+      </div>
+      <div class="summary-item">
+        <span class="summary-label">Harga per Jam</span>
+        <span class="summary-val" id="s-price">—</span>
+      </div>
+
+      <div class="summary-total">
+        <span class="summary-total-label">TOTAL</span>
+        <span class="summary-total-val" id="s-total">—</span>
+      </div>
+
+      <button class="btn-book" onclick="submitBooking()">Konfirmasi & Booking ⚡</button>
+      <p style="font-size:11px;color:var(--text2);text-align:center;margin-top:.75rem;">Pembayaran dilakukan di tempat atau via transfer bank</p>
+    </div>
+  </div>
+</div>
+
+<!-- FASILITAS -->
+<section id="fasilitas">
+  <div class="section-label">Fasilitas</div>
+  <h2 class="section-title reveal">LENGKAP &<br>NYAMAN.</h2>
+  <p class="section-sub reveal">Semua yang kamu butuhkan sudah tersedia.</p>
+
+  <div class="facilities-grid">
+    <div class="facility-item reveal">
+      <div class="facility-icon">🚿</div>
+      <div>
+        <div class="facility-name">Kamar Mandi & Shower</div>
+        <div class="facility-desc">Fasilitas mandi bersih terpisah pria dan wanita, dilengkapi loker penyimpanan barang.</div>
+      </div>
+    </div>
+    <div class="facility-item reveal">
+      <div class="facility-icon">🅿️</div>
+      <div>
+        <div class="facility-name">Parkir Luas & Gratis</div>
+        <div class="facility-desc">Area parkir luas untuk kendaraan roda dua dan empat, dijaga satpam 24 jam.</div>
+      </div>
+    </div>
+    <div class="facility-item reveal">
+      <div class="facility-icon">🥤</div>
+      <div>
+        <div class="facility-name">Kantin & Minuman</div>
+        <div class="facility-desc">Tersedia berbagai minuman segar, snack, dan makanan ringan di area lobi.</div>
+      </div>
+    </div>
+    <div class="facility-item reveal">
+      <div class="facility-icon">💡</div>
+      <div>
+        <div class="facility-name">Pencahayaan LED Premium</div>
+        <div class="facility-desc">Seluruh lapangan dilengkapi lampu LED terang untuk sesi malam hari tanpa hambatan.</div>
+      </div>
+    </div>
+    <div class="facility-item reveal">
+      <div class="facility-icon">📡</div>
+      <div>
+        <div class="facility-name">WiFi Gratis</div>
+        <div class="facility-desc">Koneksi WiFi cepat tersedia di seluruh area kompleks, termasuk tribun penonton.</div>
+      </div>
+    </div>
+    <div class="facility-item reveal">
+      <div class="facility-icon">🏆</div>
+      <div>
+        <div class="facility-name">Peralatan Rental</div>
+        <div class="facility-desc">Sewa raket, bola, dan perlengkapan lainnya tersedia di meja resepsionis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ULASAN -->
+<section id="ulasan" style="background: var(--dark); max-width: 100%; padding: 5rem 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+    <div class="section-label">Ulasan</div>
+    <h2 class="section-title reveal">KATA MEREKA<br>YANG UDAH MAIN.</h2>
+
+    <div class="testimonials-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Lapangan padel-nya keren banget! Kaca temberednya bersih, lantainya empuk. Booking juga gampang, konfirmasi langsung masuk WA. Pasti balik lagi!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">RD</div>
+          <div>
+            <div class="testi-name">Reza Dermawan</div>
+            <div class="testi-sport">Padel player</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Mini soccer-nya luas, rumput sintetisnya bagus. Teman-teman gue sering nongkrong di sini setiap weekend. Harga juga worth it banget sama fasilitasnya."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AP</div>
+          <div>
+            <div class="testi-name">Aldi Pratama</div>
+            <div class="testi-sport">Mini soccer captain</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Lapangan badminton parketnya nyaman banget buat kaki. Pencahayaannya terang merata, perfect buat latihan sore sampai malam. Recommended!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">SM</div>
+          <div>
+            <div class="testi-name">Sinta Maharani</div>
+            <div class="testi-sport">Badminton enthusiast</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="nav-logo">Sport<span>Zone</span></span>
+    <p class="footer-desc">Platform booking lapangan olahraga terpercaya. Main kapan aja, di mana aja.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Lapangan</h4>
+    <ul>
+      <li><a href="#">Mini Soccer</a></li>
+      <li><a href="#">Padel</a></li>
+      <li><a href="#">Badminton</a></li>
+      <li><a href="#">Jadwal Tersedia</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Layanan</h4>
+    <ul>
+      <li><a href="#">Booking Online</a></li>
+      <li><a href="#">Rental Peralatan</a></li>
+      <li><a href="#">Event & Turnamen</a></li>
+      <li><a href="#">Membership</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Info</h4>
+    <ul>
+      <li><a href="#">Jam Operasional</a></li>
+      <li><a href="#">Lokasi</a></li>
+      <li><a href="#">Kontak</a></li>
+      <li><a href="#">FAQ</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+<<<<<<< HEAD
+  <span>© 2025 SportZone. Semua hak dilindungi.</span>
+=======
+  <span>© 2025 Lapangan.ID. Semua hak dilindungi.</span>
+>>>>>>> first commit
+  <span>🕕 Buka 06:00–23:00 setiap hari</span>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-icon">✅</div>
+    <div class="modal-title">BOOKING BERHASIL!</div>
+    <p class="modal-sub" id="modal-text">Booking kamu sudah dikonfirmasi. Detail pemesanan telah dikirim ke WhatsApp kamu. Sampai ketemu di lapangan!</p>
+    <button class="modal-close" onclick="closeModal()">Oke, Siap Main!</button>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
