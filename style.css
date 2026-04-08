@@ -421,7 +421,7 @@ footer {
 
 .detail-title {
   color: white;
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: var(--font-head);
   font-size: 2.5rem;
   letter-spacing: 1px;
   margin-bottom: 1.5rem;
@@ -430,14 +430,14 @@ footer {
 .detail-desc {
   color: #ccc;
   margin-bottom: 1rem;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
 }
 
 .detail-list {
   color: #ccc;
   margin-bottom: 2rem;
   margin-left: 1.5rem;
-  font-family: 'DM Sans', sans-serif;
+  font-family: var(--font-body);
   line-height: 1.8;
 }
 
@@ -462,23 +462,20 @@ footer {
   filter: brightness(0.9);
 }
 
-/* --- Styling Slider (RESPONSIVE: PAS DI HP & LAPTOP) --- */
-
-/* 1. Ukuran Dasar (Ini yang akan dipakai di layar HP) */
+/* --- Styling Slider --- */
 .slider-wrapper {
   position: relative;
   width: 100%;
-  height: 300px; /* Tinggi pas untuk HP */
+  height: 300px; 
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1.5rem;
   background: #2a2a2a;
 }
 
-/* 2. Deteksi Layar Lebar (Tablet & Laptop) */
 @media (min-width: 768px) {
   .slider-wrapper {
-    height: 500px; /* Tinggi otomatis melar jadi 500px di layar besar */
+    height: 500px;
   }
 }
 
@@ -489,12 +486,11 @@ footer {
   transition: transform 0.4s ease-in-out;
 }
 
-/* 3. Pengaturan Gambar Biar Pas & Gak Gepeng */
 .slider-track img {
   width: 100%;
   height: 100%;
   object-fit: cover; 
-  object-position: center bottom; /* Paksa website memotong bagian atas/langit-langit saja */
+  object-position: center bottom; 
   flex-shrink: 0;
 }
 
@@ -528,4 +524,48 @@ footer {
 
 .slider-btn.next {
   right: 15px;
+}
+
+/* ==================================================
+   TAMBAHAN CSS UNTUK FORM ULASAN / REVIEW
+================================================== */
+.add-review-container {
+  max-width: 600px;
+  margin: 4rem auto 0 auto;
+  padding: 2.5rem;
+  background: var(--card); 
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.add-review-container .form-title {
+  font-family: var(--font-head);
+  font-size: 1.8rem;
+  margin-bottom: .3rem;
+  text-align: center;
+}
+
+.add-review-container .form-sub {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.add-review-container textarea {
+  width: 100%;
+  padding: 1rem;
+  background: var(--card2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  resize: vertical;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.add-review-container textarea:focus {
+  border-color: rgba(200,241,53,0.5);
 }
