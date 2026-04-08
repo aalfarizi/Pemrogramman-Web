@@ -402,3 +402,119 @@ footer {
   .footer-bottom { flex-direction: column; text-align: center; }
   .time-slots { grid-template-columns: repeat(2, 1fr); }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+.detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.detail-card {
+  padding: 3rem;
+  background: #1a1a1a;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.detail-title {
+  color: white;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.detail-desc {
+  color: #ccc;
+  margin-bottom: 1rem;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.detail-list {
+  color: #ccc;
+  margin-bottom: 2rem;
+  margin-left: 1.5rem;
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.8;
+}
+
+.detail-list strong {
+  color: var(--lime, #a3ff12); /* Menggunakan warna lime bawaanmu */
+}
+
+.btn-lanjut-booking {
+  background: var(--lime, #a3ff12);
+  color: black;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-lanjut-booking:hover {
+  filter: brightness(0.9);
+}
+
+/* --- Styling Khusus Slider --- */
+.slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  background: #2a2a2a;
+}
+
+.slider-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.slider-track img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 2;
+}
+
+.slider-btn:hover {
+  background: var(--lime, #a3ff12);
+  color: #000;
+}
+
+.slider-btn.prev {
+  left: 15px;
+}
+
+.slider-btn.next {
+  right: 15px;
+}

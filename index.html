@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <span class="nav-logo">LAPANGAN<span>.ID</span></span>
   <ul class="nav-links">
@@ -24,7 +23,6 @@
   </button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="close-btn" id="closeMenu">✕</button>
   <a href="#sports"   onclick="closeMobile()">Lapangan</a>
@@ -34,7 +32,6 @@
   <a href="#booking"  onclick="closeMobile()" style="color:var(--lime)">Pesan Sekarang →</a>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
@@ -67,14 +64,13 @@
   </div>
 </div>
 
-<!-- SPORTS -->
 <section id="sports">
   <div class="section-label">Pilih Olahraga</div>
   <h2 class="section-title reveal">3 LAPANGAN,<br>1 TEMPAT.</h2>
   <p class="section-sub reveal">Semua tersedia dengan fasilitas premium dan jadwal fleksibel.</p>
 
   <div class="sports-grid">
-    <div class="sport-card reveal" onclick="selectSport('minisoccer')">
+    <div class="sport-card reveal" onclick="selectSport('minisoccer'); document.getElementById('detail-minisoccer').scrollIntoView({behavior: 'smooth'});">
       <div class="sport-badge">4 Lapangan</div>
       <div class="sport-card-img soccer">
         <div class="sport-icon">⚽</div>
@@ -89,7 +85,7 @@
       </div>
     </div>
 
-    <div class="sport-card reveal" onclick="selectSport('padel')">
+    <div class="sport-card reveal" onclick="selectSport('padel'); document.getElementById('detail-padel').scrollIntoView({behavior: 'smooth'});">
       <div class="sport-badge">4 Lapangan</div>
       <div class="sport-card-img padel">
         <div class="sport-icon">🎾</div>
@@ -104,7 +100,7 @@
       </div>
     </div>
 
-    <div class="sport-card reveal" onclick="selectSport('badminton')">
+    <div class="sport-card reveal" onclick="selectSport('badminton'); document.getElementById('detail-badminton').scrollIntoView({behavior: 'smooth'});">
       <div class="sport-badge">4 Lapangan</div>
       <div class="sport-card-img badminton">
         <div class="sport-icon">🏸</div>
@@ -121,7 +117,69 @@
   </div>
 </section>
 
-<!-- BOOKING -->
+<div class="detail-container">
+  
+  <div id="detail-minisoccer" class="detail-card">
+    <h2 class="detail-title">DETAIL LAPANGAN: MINI SOCCER</h2>
+    <div class="slider-wrapper">
+      <div class="slider-track" id="track-minisoccer">
+        <img src="minisoccer-1.jpg" alt="Mini Soccer 1">
+        <img src="minisoccer-2.jpg" alt="Mini Soccer 2">
+        <img src="minisoccer-3.jpg" alt="Mini Soccer 3">
+        <img src="minisoccer-4.jpg" alt="Mini Soccer 4">
+      </div>
+      <button class="slider-btn prev" onclick="geserSlide('minisoccer', -1)">&#10094;</button>
+      <button class="slider-btn next" onclick="geserSlide('minisoccer', 1)">&#10095;</button>
+    </div>
+    <p class="detail-desc">Nikmati pengalaman bermain sepak bola dengan rumput sintetis standar FIFA. Cocok untuk main bareng teman kantor atau turnamen kecil.</p>
+    <ul class="detail-list">
+      <li>Fasilitas: Ruang ganti ber-AC, Tribun penonton, Papan skor digital.</li>
+      <li>Harga: <strong>Rp 300.000 / jam</strong></li>
+    </ul>
+    <button class="btn-lanjut-booking" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Lanjut Booking ⚡</button>
+  </div>
+
+  <div id="detail-padel" class="detail-card">
+    <h2 class="detail-title">DETAIL LAPANGAN: PADEL</h2>
+    <div class="slider-wrapper">
+      <div class="slider-track" id="track-padel">
+        <img src="padel-1.jpg" alt="Padel 1">
+        <img src="padel-2.jpg" alt="Padel 2">
+        <img src="padel-3.jpg" alt="Padel 3">
+        <img src="padel-4.jpg" alt="Padel 4">
+      </div>
+      <button class="slider-btn prev" onclick="geserSlide('padel', -1)">&#10094;</button>
+      <button class="slider-btn next" onclick="geserSlide('padel', 1)">&#10095;</button>
+    </div>
+    <p class="detail-desc">Main padel dengan sensasi premium! Lapangan kami menggunakan kaca tempered berstandar internasional dan pencahayaan LED yang tidak silau di mata.</p>
+    <ul class="detail-list">
+      <li>Fasilitas: Penyewaan raket premium, bola gratis, ruang tunggu VIP.</li>
+      <li>Harga: <strong>Rp 200.000 / jam</strong></li>
+    </ul>
+    <button class="btn-lanjut-booking" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Lanjut Booking ⚡</button>
+  </div>
+
+  <div id="detail-badminton" class="detail-card">
+    <h2 class="detail-title">DETAIL LAPANGAN: BADMINTON</h2>
+    <div class="slider-wrapper">
+      <div class="slider-track" id="track-badminton">
+        <img src="badminton-1.jpg" alt="Badminton 1">
+        <img src="badminton-2.jpg" alt="Badminton 2">
+        <img src="badminton-3.jpg" alt="Badminton 3">
+        <img src="badminton-4.jpg" alt="Badminton 4">
+      </div>
+      <button class="slider-btn prev" onclick="geserSlide('badminton', -1)">&#10094;</button>
+      <button class="slider-btn next" onclick="geserSlide('badminton', 1)">&#10095;</button>
+    </div>
+    <p class="detail-desc">Lantai kayu parket standar BWF yang aman untuk lutut dan engkel. Pencahayaan merata memastikan shuttlecock terlihat jelas dari segala sudut.</p>
+    <ul class="detail-list">
+      <li>Fasilitas: Tribun penonton, net standar BWF, kantin minuman di area lapangan.</li>
+      <li>Harga: <strong>Rp 100.000 / jam</strong></li>
+    </ul>
+    <button class="btn-lanjut-booking" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">Lanjut Booking ⚡</button>
+  </div>
+
+</div>
 <div class="booking-section" id="booking">
   <div class="booking-wrap">
     <div>
@@ -226,7 +284,6 @@
   </div>
 </div>
 
-<!-- FASILITAS -->
 <section id="fasilitas">
   <div class="section-label">Fasilitas</div>
   <h2 class="section-title reveal">LENGKAP &<br>NYAMAN.</h2>
@@ -278,7 +335,6 @@
   </div>
 </section>
 
-<!-- ULASAN -->
 <section id="ulasan" style="background: var(--dark); max-width: 100%; padding: 5rem 0;">
   <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
     <div class="section-label">Ulasan</div>
@@ -322,7 +378,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-brand">
     <span class="nav-logo">Lapangan<span>.ID</span></span>
@@ -361,7 +416,6 @@
   <span>🕕 Buka 06:00–23:00 setiap hari</span>
 </div>
 
-<!-- MODAL -->
 <div class="modal-overlay" id="modal">
   <div class="modal">
     <div class="modal-icon">✅</div>

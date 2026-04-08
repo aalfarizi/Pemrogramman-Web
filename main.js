@@ -142,3 +142,28 @@ const obs = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 reveals.forEach(el => obs.observe(el));
+
+const slidePos = {
+  minisoccer: 0,
+  padel: 0,
+  badminton: 0
+};
+
+function geserSlide(lapangan, arah) {
+  const track = document.getElementById('track-' + lapangan);
+  const totalSlides = track.children.length;
+  
+  slidePos[lapangan] += arah;
+  
+  // Jika slide sudah di ujung, kembali ke awal/akhir
+  if (slidePos[lapangan] >= totalSlides) {
+    slidePos[lapangan] = 0;
+  }
+  if (slidePos[lapangan] < 0) {
+    slidePos[lapangan] = totalSlides - 1;
+  }
+  
+  // Hitung persentase geser (100% per gambar)
+  const nilaiGeser = -(slidePos[lapangan] * 100);
+  track.style.transform = `translateX(${nilaiGeser}%)`;
+}
